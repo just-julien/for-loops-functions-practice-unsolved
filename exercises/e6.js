@@ -5,7 +5,15 @@
 
 export function getClientWithNoMoney(array) {
   // Your code goes here...
+  const needsGoFundMe = [];
 
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].balance === 0) {
+      needsGoFundMe.push(array[i].name);
+    }
+  }
+
+  return needsGoFundMe;
 }
 
 // === TEST YOURSELF ===

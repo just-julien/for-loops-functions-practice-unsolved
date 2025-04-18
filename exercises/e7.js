@@ -6,7 +6,23 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
-  
+  let onFoodStamps = null;
+
+  for (let i = 0; i < array.length; i++) {
+    const account = array[i];
+
+    if (account.balance > 0) {
+      if (onFoodStamps === null || account.balance < onFoodStamps.balance) {
+        onFoodStamps = account;
+      }
+    }
+  }
+
+  if (onFoodStamps === null) {
+    return [];
+  }
+
+  return [onFoodStamps];
 }
 
 // === TEST YOURSELF ===
